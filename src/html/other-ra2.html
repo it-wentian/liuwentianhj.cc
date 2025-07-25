@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>其他红警版本下载 - AI的复仇</title>
+    <link rel="shortcut icon" href="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" type="image/x-icon">
+    <meta name="description" content="红色警戒2 资源免费分享与安装教程。">
+
+    <!-- 补充关键词标签（辅助SEO） -->
+    <meta name="keywords" content="红色警戒2, 共和国之辉， 共和国之争，红警原版 ，红警尤里的复仇, 红警2模组, 红警2扩展包, 红警2下载,，战网、兰博，, 红色警戒2 MOD">
+    <!-- 包含核心词及相关衍生词（红警2模组、扩展包等），避免关键词堆砌，控制在5-8个核心词 -->
+
+    <!-- 规范网址标签（避免重复内容惩罚） -->
+    <link rel="canonical" href="https://liuwentianhj.cc" />
+    <!-- 告诉搜索引擎当前页面的唯一标准URL，避免因http/https、www/非www等导致的重复内容问题 -->
+
+    <!-- 移动端适配标签（提升移动搜索排名） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 确保移动端显示正常，提升移动搜索体验评分 -->
+    <script src="../js/tailwind.min.js" ></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#CC0000', // 保持红色警戒红
+                        secondary: '#FFCC00', // 保持警示黄
+                        dark: '#0A0A0A', // 深色背景统一
+                        light: '#AAAAAA', // 浅色文字统一
+                        neutral: '#333333',
+                        military: '#2D312C',
+                        accent: '#008080',
+                        militaryDark: '#0F172A', // 深色区块背景
+                        militaryMedium: '#1E293B', // 卡片背景
+                        militaryLight: '#334155',
+                        militaryAccent: '#0EA5E9', // 强调色统一
+                    },
+                    fontFamily: {
+                        military: ['Rajdhani', 'Arial', 'Helvetica', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+            .bg-overlay {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.2);
+            }
+            .super-glow {
+                box-shadow: 
+                    0 0 15px rgba(14, 165, 233, 0.2),
+                    0 0 30px rgba(14, 165, 233, 0.1);
+            }
+.bg-grid {
+    background-image: 
+        linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px; /* 与当前页面保持一致的网格密度 */
+}
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-military bg-grid">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 bg-[#212429] border-b border-militaryAccent/30">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center">
+                        <img src="https://s2.loli.net/2025/02/27/qBZigrs7do91j48.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../../index.html#home" class="text-white hover:text-militaryAccent transition-colors">首页</a>
+                    <a href="other-ra2.html" class="text-militaryAccent font-bold">其他红警</a>
+                    <button id="backBtn"
+                        class="bg-militaryAccent/80 hover:bg-militaryAccent text-white font-bold py-2 px-4 rounded transition-all">
+                        <i class="fa fa-arrow-left mr-1"></i> 返回
+                    </button>
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-white" id="mobileMenuBtn">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 移动端菜单 -->
+        <div class="md:hidden bg-[#212429] border-b border-militaryAccent/30 hidden" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="../../index.html#home" class="py-2 text-white hover:text-militaryAccent">首页</a>
+                <a href="other-ra2.html" class="py-2 text-militaryAccent font-bold">其他红警</a>
+                <a href="../../index.html#download" class="py-2 text-white hover:text-militaryAccent">下载</a>
+                <a href="../../index.html#about" class="py-2 text-white hover:text-militaryAccent">关于</a>
+                <button class="bg-militaryAccent/80 hover:bg-militaryAccent text-white font-bold py-2 px-4 rounded">
+                    <i class="fa fa-arrow-left mr-1"></i> 返回
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题区 -->
+    <section class="pt-24 pb-12 bg-militaryDark relative">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold text-secondary mb-4">其他红警版本</h1>
+            <p class="text-light max-w-2xl mx-auto">这里提供各种红色警戒2相关版本和模组的下载，所有资源均来自网络收集整理</p>
+        </div>
+    </section>
+
+    <!-- 红警版本列表 -->
+    <section class="py-16 bg-dark">
+        <div class="container mx-auto px-4">
+            <!-- 筛选工具栏 -->
+            <div class="bg-militaryMedium/70 rounded-lg p-4 mb-10 border border-militaryAccent/30">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="flex flex-wrap gap-3">
+                        <button class="filter-btn active bg-militaryAccent text-white px-4 py-2 rounded-full text-sm"
+                            data-filter="all">全部版本</button>
+                        <button
+                            class="filter-btn bg-militaryDark hover:bg-militaryAccent/80 text-white px-4 py-2 rounded-full text-sm transition-colors"
+                            data-filter="original">原版游戏</button>
+                        <button
+                            class="filter-btn bg-militaryDark hover:bg-militaryAccent/80 text-white px-4 py-2 rounded-full text-sm transition-colors"
+                            data-filter="mod">玩家模组</button>
+                    </div>
+
+                    <div class="relative w-full md:w-64">
+                        <input type="text" id="searchRa2" placeholder="搜索红警版本..."
+                            class="w-full bg-militaryDark/80 border border-militaryAccent/50 rounded px-4 py-2 pl-10 text-white focus:outline-none focus:border-militaryAccent">
+                        <i class="fa fa-search absolute left-3 top-3 text-militaryAccent/70"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 红警版本网格 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="ra2Grid">
+                <!-- 内容将通过JS动态生成 -->
+            </div>
+
+            <!-- 无结果提示（默认隐藏） -->
+            <div id="noResults" class="hidden text-center py-16">
+                <i class="fa fa-search text-5xl text-light/50 mb-4"></i>
+                <p class="text-light text-lg">未找到匹配的红警版本</p>
+                <button id="resetSearch"
+                    class="mt-4 bg-militaryAccent/80 hover:bg-militaryAccent text-white px-4 py-2 rounded transition-colors">
+                    重置搜索
+                </button>
+            </div>
+
+            <!-- 加载更多按钮 -->
+            <div class="text-center mt-12">
+                <button id="loadMoreBtn"
+                    class="bg-militaryMedium hover:bg-militaryMedium/80 border border-militaryAccent/50 text-white font-bold py-3 px-8 rounded transition-all duration-300 flex items-center mx-auto transform hover:scale-105 hover:border-militaryAccent/80">
+                    <i class="fa fa-refresh mr-2 transition-transform duration-500 hover:rotate-180"></i> 加载更多
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载说明 -->
+    <section class="py-16 bg-militaryDark">
+        <div class="container mx-auto px-4">
+            <div class="bg-militaryMedium/70 rounded-lg p-6 md:p-8 border border-militaryAccent/30 max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-secondary mb-6 text-center">下载说明</h3>
+                <div class="text-light space-y-4">
+                    <p><i class="fa fa-info-circle text-militaryAccent mr-2"></i> 所有资源均来自网络收集整理，仅作学习交流使用，请勿用于商业用途</p>
+                    <p><i class="fa fa-exclamation-triangle text-yellow-500 mr-2"></i> 部分模组可能需要原版游戏支持，请先安装红色警戒2原版</p>
+                    <p><i class="fa fa-shield text-green-500 mr-2"></i> 所有资源均经过杀毒检测，但仍建议下载后自行扫描</p>
+                    <p><i class="fa fa-question-circle text-blue-400 mr-2"></i> 下载或安装遇到问题，请加入QQ群寻求帮助</p>
+                    <p><i class="fa fa-copyright text-gray-400 mr-2"></i> 红色警戒系列游戏版权归Electronic Arts所有，如有侵权请联系删除</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-militaryDark py-12 border-t border-militaryAccent/30">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+                        <h3 class="text-xl font-bold text-secondary">AI的复仇</h3>
+                    </div>
+                    <p class="text-light mb-4">红色警戒2非官方扩展模组，专注于提供多模式多防守图，让玩家单机就能爽玩各类防守图。</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-qq text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-wechat text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">快速链接</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="../../index.html#home" class="text-light hover:text-militaryAccent transition-colors">首页</a>
+                        <a href="../../index.html#features"
+                            class="text-light hover:text-militaryAccent transition-colors">模组特色</a>
+                        <a href="../../index.html#screenshots"
+                            class="text-light hover:text-militaryAccent transition-colors">游戏截图</a>
+                        <a href="../../index.html#download"
+                            class="text-light hover:text-militaryAccent transition-colors">下载中心</a>
+                        <a href="../../index.html#vip-members"
+                            class="text-light hover:text-militaryAccent transition-colors">会员列表</a>
+                        <a href="../../index.html#about"
+                            class="text-light hover:text-militaryAccent transition-colors">关于我们</a>
+                        <a href="../../index.html#FAQ" class="text-light hover:text-militaryAccent transition-colors">常见问题</a>
+                        <a href="../../index.html#update"
+                            class="text-light hover:text-militaryAccent transition-colors">更新日志</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-militaryAccent/30 mt-8 pt-6 text-center text-light text-sm">
+                <p>&copy; 2025 AI的复仇 模组网站 | 红色警戒2相关资源仅作学习交流使用</p>
+                <p class="mt-2">命令与征服，红色警戒2及尤里的复仇版权归Electronic Arts所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+<!-- 只需要修改JavaScript部分，主要修复数据处理逻辑 -->
+<script src="../js/other-ra2.js" type="module"></script>
+</body>
+
+</html>
