@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI的复仇赞助套餐 - 红色警戒2</title>
+    <link rel="shortcut icon" href="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" type="image/x-icon">
+    <meta name="description" content="红色警戒2 AI的复仇赞助套餐，支持平台开发，享受专属会员特权。">
+    <meta name="keywords" content="红色警戒2, AI的复仇, 红警2赞助, 红警2会员, 红警2扩展包, 红警2下载">
+    <link rel="canonical" href="https://liuwentianhj.cc" />
+    <script src="../js/tailwind.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-grid {
+                background-image: 
+                    linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+                background-size: 20px 20px;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.2);
+            }
+            .modal-overlay {
+                display: none;
+                inset: 0;
+                background: rgba(0,0,0,0.7);
+                z-index: 9999;
+         
+          
+            }
+            .modal-content {
+                background: #283040;
+                border-radius: 18px;
+                box-shadow: 0 0 32px #0EA5E9;
+                padding: 32px 24px;
+                width: auto;
+                max-width: 360px;
+                max-height: 90vh;
+                display: flex;
+                position: absolute;
+               left: 50%;
+               top: 50%;
+                transform: translate(-50%, -50%);
+                flex-direction: column;
+                align-items: center;
+                overflow: auto;
+            }
+            .modal-title {
+                color: #0EA5E9;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 12px;
+                text-align: center;
+            }
+            .modal-qrcode {
+                max-width: 320px;
+                width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 2px 16px #0EA5E9;
+                margin-bottom: 18px;
+            }
+            .modal-close {
+                margin-top: 8px;
+                padding: 8px 24px;
+                background: #0EA5E9;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    militaryDark: '#212429',
+                    militaryMedium: '#283040',
+                    militaryAccent: '#0EA5E9',
+                    secondary: '#38bdf8',
+                    light: '#94a3b8'
+                }
+            }
+        }
+    }
+</script>
+
+<body class="bg-militaryDark text-white font-military bg-grid">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 bg-[#212429] border-b border-militaryAccent/30">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center">
+                        <img src="https://s2.loli.net/2025/02/27/qBZigrs7do91j48.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../../index.html#home"
+                        class="text-white hover:text-militaryAccent transition-colors">首页</a>
+                    <a href="./other-ra2.html" class="text-militaryAccent font-bold">其他红警</a>
+                    <a href="../../index.html#download"
+                        class="text-white hover:text-militaryAccent transition-colors">下载</a>
+                    <a href="../../index.html#vip-members"
+                        class="text-white hover:text-militaryAccent transition-colors">会员</a>
+                    <a href="../../index.html#about"
+                        class="text-white hover:text-militaryAccent transition-colors">关于</a>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-white" id="mobileMenuBtn">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden bg-[#212429] border-b border-militaryAccent/30 hidden" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="../../index.html#home" class="py-2 text-white hover:text-militaryAccent">首页</a>
+                <a href="../other-ra2.html" class="py-2 text-militaryAccent font-bold">其他红警</a>
+                <a href="../../index.html#download" class="py-2 text-white hover:text-militaryAccent">下载</a>
+                <a href="../../index.html#vip-members" class="py-2 text-white hover:text-militaryAccent">会员</a>
+                <a href="../../index.html#about" class="py-2 text-white hover:text-militaryAccent">关于</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题区 -->
+    <section class="pt-24 pb-12 bg-militaryDark relative">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold text-secondary mb-4">AI的复仇赞助套餐</h1>
+            <p class="text-light max-w-2xl mx-auto">支持平台开发，享受专属会员特权，助力红警2 AI的复仇持续更新！</p>
+        </div>
+    </section>
+
+    <!-- 套餐卡片区 -->
+    <section class="py-16 bg-militaryDark">
+        <div class="container mx-auto px-4 flex flex-wrap gap-8 justify-center">
+            <!-- 试玩卡 -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+                style="background-color:#283040;">
+                <h2 class="text-xl font-bold text-militaryAccent mb-2">试玩卡</h2>
+                <div class="text-yellow-400 text-lg font-bold mb-1">¥4.9</div>
+                <div class="text-light text-sm mb-3">1天</div>
+                <ul class="mb-4 text-light text-sm space-y-1">
+                    <li>适合不经常玩的人</li>
+                    <li>新版一日游</li>
+                    <li>这年头请人办事难啊，当作一瓶水钱啦</li>
+                    <li>去网吧玩一天可不止这个价</li>
+                </ul>
+                <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
+                    href="#"><i class="fa fa-rocket"></i> 立即体验</a>
+            </div>
+            <!-- 月卡 -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+                style="background-color:#283040;">
+                <h2 class="text-xl font-bold text-militaryAccent mb-2">月卡</h2>
+                <div class="line-through text-red-400 text-sm mb-1">¥29.9</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥23.9</div>
+                <div class="text-light text-sm mb-3">30天</div>
+                <ul class="mb-4 text-light text-sm space-y-1">
+                    <li>花小钱享受一样的内容</li>
+                    <li>到期自动移除账号...</li>
+                </ul>
+                <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
+                    href="#"><i class="fa fa-star"></i> 立即赞助</a>
+            </div>
+            <!-- 半年卡 -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+                style="background-color:#283040;">
+                <h2 class="text-xl font-bold text-militaryAccent mb-2">半年卡</h2>
+                <div class="line-through text-red-400 text-sm mb-1">¥69.9</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥59.9</div>
+                <div class="text-light text-sm mb-3">180天</div>
+                <ul class="mb-4 text-light text-sm space-y-1">
+                    <li>玩的越勤快，体验的越多</li>
+                    <li>时光荏苒如白驹过隙</li>
+                    <li>人生如戏，没必要太苦需忙里偷闲</li>
+                </ul>
+                <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
+                    href="#"><i class="fa fa-gift"></i> 立即赞助</a>
+            </div>
+            <!-- 一年卡 -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+                style="background-color:#283040;">
+                <h2 class="text-xl font-bold text-militaryAccent mb-2">一年卡</h2>
+                <div class="line-through text-red-400 text-sm mb-1">¥119.9</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥99.9</div>
+                <div class="text-light text-sm mb-3">365天</div>
+                <ul class="mb-4 text-light text-sm space-y-1">
+                    <li>您是这个版本的忠实粉丝了</li>
+                    <li>期间部分更新也能享受得到了</li>
+                    <li>最稳妥的选择</li>
+                </ul>
+                <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
+                    href="#"><i class="fa fa-diamond"></i> 立即赞助</a>
+            </div>
+            <!-- 三年卡 -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+                style="background-color:#283040;">
+                <h2 class="text-xl font-bold text-militaryAccent mb-2">三年卡</h2>
+                <div class="line-through text-red-400 text-sm mb-1">¥299.9</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥199.9</div>
+                <div class="text-light text-sm mb-3">1095天</div>
+                <ul class="mb-4 text-light text-sm space-y-1">
+                    <li>这个版本的发展已经离不开您了</li>
+                    <li>可免费享受期间多数的更新</li>
+                    <li>比较划算的选择</li>
+                </ul>
+                <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
+                    href="#"><i class="fa fa-trophy"></i> 立即赞助</a>
+            </div>
+            <!-- 终身卡 -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+                style="background-color:#283040;">
+                <h2 class="text-xl font-bold text-militaryAccent mb-2">终身卡</h2>
+                <div class="line-through text-red-400 text-sm mb-1">¥1888</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥1314</div>
+                <div class="text-light text-sm mb-3">不推荐，除非你是真的热爱！</div>
+                <ul class="mb-4 text-light text-sm space-y-1">
+                    <li>感谢您的赞助</li>
+                    <li>咱的服务器又能延续一年了</li>
+                    <li>更新的内容想必也少不了</li>
+                </ul>
+                <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
+                    href="#"><i class="fa fa-heart"></i> 立即赞助</a>
+
+            </div>
+        </div>
+        <!-- 赞助弹窗，放在 body 末尾，保证 flex 居中有效 -->
+        <div id="sponsorModal" class="modal-overlay">
+            <div id="sponsorModalContent" class="modal-content">
+                <div class="modal-title">扫码添加作者微信【请备注来意】</div>
+                <img src="https://s2.loli.net/2025/07/29/lgKYJGC8UoN3nwq.jpg" alt="赞助二维码" class="modal-qrcode">
+                <button id="closeSponsorModal" class="modal-close">关闭</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-militaryDark py-12 border-t border-militaryAccent/30">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+                        <h3 class="text-xl font-bold text-secondary">AI的复仇</h3>
+                    </div>
+                    <p class="text-light mb-4">红色警戒2非官方扩展模组，专注于提供多模式多防守图，让玩家单机就能爽玩各类防守图。</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-qq text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-wechat text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">快速链接</h4>
+                    <!-- 页脚快速链接部分 -->
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="../../index.html#home"
+                            class="text-light hover:text-militaryAccent transition-colors">首页</a>
+                        <a href="../../index.html#features"
+                            class="text-light hover:text-militaryAccent transition-colors">模组特色</a>
+                        <a href="../../index.html#screenshots"
+                            class="text-light hover:text-militaryAccent transition-colors">游戏截图</a>
+                        <a href="../../index.html#download"
+                            class="text-light hover:text-militaryAccent transition-colors">下载中心</a>
+                        <a href="../../index.html#vip-members"
+                            class="text-light hover:text-militaryAccent transition-colors">会员列表</a>
+                        <a href="../../index.html#about"
+                            class="text-light hover:text-militaryAccent transition-colors">关于我们</a>
+                        <a href="../../index.html#FAQ"
+                            class="text-light hover:text-militaryAccent transition-colors">常见问题</a>
+                        <a href="../../index.html#update"
+                            class="text-light hover:text-militaryAccent transition-colors">更新日志</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-militaryAccent/30 mt-8 pt-6 text-center text-light text-sm">
+                <p>&copy; 2025 AI的复仇 模组网站 | 红色警戒2相关资源仅作学习交流使用</p>
+                <p class="mt-2">命令与征服，红色警戒2及尤里的复仇版权归Electronic Arts所有</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // 统一绑定所有套餐卡片的立即赞助按钮
+        document.addEventListener('DOMContentLoaded', function () {
+            var modal = document.getElementById('sponsorModal');
+            var closeBtn = document.getElementById('closeSponsorModal');
+            var buyBtns = document.querySelectorAll('.buy-btn');
+            buyBtns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // 只对“立即赞助”按钮弹窗，试玩卡“立即体验”不弹窗
+                    if (btn.innerText.includes('赞助')) {
+                        modal.style.display = 'block';
+                    }
+                });
+            });
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+            // 点击遮罩关闭弹窗
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
