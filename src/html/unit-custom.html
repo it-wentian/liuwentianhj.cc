@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI的复仇兵种定制服务 - 红色警戒2</title>
+    <link rel="shortcut icon" href="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" type="image/x-icon">
+    <meta name="description" content="红色警戒2 AI的复仇兵种定制服务，支持模型、武器、技能等个性化定制。">
+    <meta name="keywords" content="红色警戒2, AI的复仇, 兵种定制, 红警2模型, 红警2武器, 红警2扩展包, 红警2下载">
+    <link rel="canonical" href="https://liuwentianhj.cc" />
+    <script src="../js/tailwind.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-grid {
+                background-image: 
+                    linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+                background-size: 20px 20px;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.2);
+            }
+               .modal-overlay {
+                display: none;
+                inset: 0;
+                background: rgba(0,0,0,0.7);
+                z-index: 9999;
+         
+          
+            }
+            .modal-content {
+                background: #283040;
+                border-radius: 18px;
+                box-shadow: 0 0 32px #0EA5E9;
+                padding: 32px 24px;
+                width: auto;
+                max-width: 360px;
+                max-height: 90vh;
+                display: flex;
+                position: absolute;
+               left: 50%;
+               top: 50%;
+                transform: translate(-50%, -50%);
+                flex-direction: column;
+                align-items: center;
+                overflow: auto;
+            }
+            .modal-title {
+                color: #0EA5E9;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 12px;
+                text-align: center;
+            }
+            .modal-qrcode {
+                max-width: 320px;
+                width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 2px 16px #0EA5E9;
+                margin-bottom: 18px;
+            }
+            .modal-close {
+                margin-top: 8px;
+                padding: 8px 24px;
+                background: #0EA5E9;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    militaryDark: '#212429',
+                    militaryMedium: '#283040',
+                    militaryAccent: '#0EA5E9',
+                    secondary: '#38bdf8',
+                    light: '#94a3b8'
+                }
+            }
+        }
+    }
+</script>
+
+<body class="bg-militaryDark text-white font-military bg-grid">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 bg-[#212429] border-b border-militaryAccent/30">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center">
+                        <img src="https://s2.loli.net/2025/02/27/qBZigrs7do91j48.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../../index.html#home"
+                        class="text-white hover:text-militaryAccent transition-colors">首页</a>
+                    <a href="./other-ra2.html" class="text-militaryAccent font-bold">其他红警</a>
+                    <a href="../../index.html#download"
+                        class="text-white hover:text-militaryAccent transition-colors">下载</a>
+                    <a href="../../index.html#vip-members"
+                        class="text-white hover:text-militaryAccent transition-colors">会员</a>
+                    <a href="../../index.html#about"
+                        class="text-white hover:text-militaryAccent transition-colors">关于</a>
+                </div>
+                <button class="md:hidden text-white" id="mobileMenuBtn">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden bg-[#212429] border-b border-militaryAccent/30 hidden" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="../../index.html#home" class="py-2 text-white hover:text-militaryAccent">首页</a>
+                <a href="../other-ra2.html" class="py-2 text-militaryAccent font-bold">其他红警</a>
+                <a href="../../index.html#download" class="py-2 text-white hover:text-militaryAccent">下载</a>
+                <a href="../../index.html#vip-members" class="py-2 text-white hover:text-militaryAccent">会员</a>
+                <a href="../../index.html#about" class="py-2 text-white hover:text-militaryAccent">关于</a>
+            </div>
+        </div>
+    </nav>
+    <!-- 页面标题区 -->
+    <section class="pt-24 pb-12 bg-militaryDark relative">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold text-secondary mb-4">AI的复仇兵种定制服务</h1>
+            <div
+                class="max-w-2xl mx-auto text-light text-base md:text-lg bg-militaryMedium/60 rounded-xl p-6 mb-2 flex flex-col items-center">
+                <div class="text-yellow-400 text-2xl font-bold mb-2">¥1000 起</div>
+                <ul class="text-left mb-4">
+
+                    <li>🎨 定制类型：兵种模型、武器、技能特效等，满足你的创意需求。</li>
+                    <li>� 专属兵种仅你本人可用（也可申请开放给其他玩家，定制单位不属于你个人资产，版权归平台所有）</li>
+                    <li>🎁 进游戏自动获得（如定制10个则送10个），界面直观展示，点击一次即可触发使用（仅单次）。</li>
+                    <li>🎫 定制玩家即可免费领取一年的平台会员,并拥有专属的平台loading...特效</li>
+                    <li>� 所定制的单位属于超级单位类型，适用于所有模式、遭遇战地图、单位永久不删除</li>
+                    <li>� 如有特殊需求，可再商议。</li>
+                    <li>🤝 平台的发展离不开你们的支持，欢迎壮大我们的兵种库。</li>
+                    <li>🛠️ 定制流程：沟通需求 → 报价 → 开发制作 → 游戏集成 → 专属体验。</li>
+                </ul>
+                <button id="showCustomModal"
+                    class="buy-btn bg-militaryAccent text-white font-bold py-3 px-6 rounded text-center mt-2 text-lg"><i
+                        class="fa fa-cube"></i> 咨询定制</button>
+            </div>
+            <p class="text-militaryAccent font-bold mt-2">定制兵种，专属唯一，彰显你的红警个性！</p>
+        </div>
+    </section>
+    <!-- 定制卡片区 -->
+    <section class="py-16 bg-militaryDark">
+        <!-- 内容已合并到上方介绍区 -->
+        <!-- 咨询弹窗，放在 body 末尾，保证 flex 居中有效 -->
+        <div id="customModal" class="modal-overlay" style="display:none;">
+            <div id="customModalContent" class="modal-content">
+                <div class="modal-title">扫码添加作者微信【请备注兵种定制】</div>
+                <div style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="https://s2.loli.net/2025/07/29/lgKYJGC8UoN3nwq.jpg" alt="定制咨询二维码" class="modal-qrcode"
+                        style="max-width:220px;width:100%;height:auto;box-shadow:0 2px 16px #0EA5E9;border-radius:12px;display:block;">
+                    <button id="closeCustomModal" class="modal-close" style="margin-top:16px;">关闭</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer class="bg-militaryDark py-12 border-t border-militaryAccent/30">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+                        <h3 class="text-xl font-bold text-secondary">AI的复仇</h3>
+                    </div>
+                    <p class="text-light mb-4">红色警戒2非官方扩展模组，专注于提供多模式多防守图，让玩家单机就能爽玩各类防守图。</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-qq text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-wechat text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-militaryMedium/80 flex items-center justify-center hover:bg-militaryAccent transition-colors">
+                            <i class="fa fa-github text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">快速链接</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="../../index.html#home"
+                            class="text-light hover:text-militaryAccent transition-colors">首页</a>
+                        <a href="../../index.html#features"
+                            class="text-light hover:text-militaryAccent transition-colors">模组特色</a>
+                        <a href="../../index.html#screenshots"
+                            class="text-light hover:text-militaryAccent transition-colors">游戏截图</a>
+                        <a href="../../index.html#download"
+                            class="text-light hover:text-militaryAccent transition-colors">下载中心</a>
+                        <a href="../../index.html#vip-members"
+                            class="text-light hover:text-militaryAccent transition-colors">会员列表</a>
+                        <a href="../../index.html#about"
+                            class="text-light hover:text-militaryAccent transition-colors">关于我们</a>
+                        <a href="../../index.html#FAQ"
+                            class="text-light hover:text-militaryAccent transition-colors">常见问题</a>
+                        <a href="../../index.html#update"
+                            class="text-light hover:text-militaryAccent transition-colors">更新日志</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-militaryAccent/30 mt-8 pt-6 text-center text-light text-sm">
+                <p>&copy; 2025 AI的复仇 模组网站 | 红色警戒2相关资源仅作学习交流使用</p>
+                <p class="mt-2">命令与征服，红色警戒2及尤里的复仇版权归Electronic Arts所有</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // 咨询弹窗绑定
+        document.addEventListener('DOMContentLoaded', function () {
+            var modal = document.getElementById('customModal');
+            var closeBtn = document.getElementById('closeCustomModal');
+            var buyBtns = document.querySelectorAll('.buy-btn');
+            buyBtns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    modal.style.display = 'block';
+                });
+            });
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
