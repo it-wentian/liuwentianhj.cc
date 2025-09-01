@@ -76,6 +76,65 @@
                 font-weight: bold;
                 cursor: pointer;
             }
+            
+            /* 自定义套餐图标 */
+            .package-title {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 8px;
+            }
+            
+            .package-title-icon {
+                font-size: 20px;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+            
+            .trial-title-icon {
+                color: #10B981;
+                background: rgba(16, 185, 129, 0.1);
+            }
+            
+            .monthly-title-icon {
+                color: #F59E0B;
+                background: rgba(245, 158, 11, 0.1);
+            }
+            
+            .halfyear-title-icon {
+                color: #8B5CF6;
+                background: rgba(139, 92, 246, 0.1);
+            }
+            
+            .yearly-title-icon {
+                color: #EF4444;
+                background: rgba(239, 68, 68, 0.1);
+            }
+            
+            .threeyear-title-icon {
+                color: #EC4899;
+                background: rgba(236, 72, 153, 0.1);
+            }
+            
+            .lifetime-title-icon {
+                color: #F59E0B;
+                background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(185, 28, 28, 0.2));
+                animation: iconPulse 2s infinite;
+            }
+            
+            @keyframes iconPulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            }
         }
     </style>
 </head>
@@ -149,7 +208,12 @@
             <!-- 试玩卡 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
-                <h2 class="text-xl font-bold text-militaryAccent mb-2">试玩卡</h2>
+                <div class="package-title">
+                    <div class="package-title-icon trial-title-icon">
+                        <i class="fa fa-play"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-militaryAccent">试玩卡</h2>
+                </div>
                 <div class="text-yellow-400 text-lg font-bold mb-1">¥4.9</div>
                 <div class="text-light text-sm mb-3">1天</div>
                 <ul class="mb-4 text-light text-sm space-y-1">
@@ -164,7 +228,12 @@
             <!-- 月卡 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
-                <h2 class="text-xl font-bold text-militaryAccent mb-2">月卡</h2>
+                <div class="package-title">
+                    <div class="package-title-icon monthly-title-icon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-militaryAccent">月卡</h2>
+                </div>
                 <div class="line-through text-red-400 text-sm mb-1">¥29.9</div>
                 <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥23.9</div>
                 <div class="text-light text-sm mb-3">30天</div>
@@ -178,7 +247,12 @@
             <!-- 半年卡 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
-                <h2 class="text-xl font-bold text-militaryAccent mb-2">半年卡</h2>
+                <div class="package-title">
+                    <div class="package-title-icon halfyear-title-icon">
+                        <i class="fa fa-sun-o"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-militaryAccent">半年卡</h2>
+                </div>
                 <div class="line-through text-red-400 text-sm mb-1">¥69.9</div>
                 <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥59.9</div>
                 <div class="text-light text-sm mb-3">180天</div>
@@ -193,7 +267,12 @@
             <!-- 一年卡 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
-                <h2 class="text-xl font-bold text-militaryAccent mb-2">一年卡</h2>
+                <div class="package-title">
+                    <div class="package-title-icon yearly-title-icon">
+                        <i class="fa fa-shield"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-militaryAccent">一年卡</h2>
+                </div>
                 <div class="line-through text-red-400 text-sm mb-1">¥119.9</div>
                 <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥99.9</div>
                 <div class="text-light text-sm mb-3">365天</div>
@@ -208,7 +287,12 @@
             <!-- 三年卡 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
-                <h2 class="text-xl font-bold text-militaryAccent mb-2">三年卡</h2>
+                <div class="package-title">
+                    <div class="package-title-icon threeyear-title-icon">
+                        <i class="fa fa-trophy"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-militaryAccent">三年卡</h2>
+                </div>
                 <div class="line-through text-red-400 text-sm mb-1">¥299.9</div>
                 <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥199.9</div>
                 <div class="text-light text-sm mb-3">1095天</div>
@@ -223,7 +307,12 @@
             <!-- 终身卡 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
-                <h2 class="text-xl font-bold text-militaryAccent mb-2">终身卡</h2>
+                <div class="package-title">
+                    <div class="package-title-icon lifetime-title-icon">
+                        <i class="fa fa-diamond"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-militaryAccent">终身卡</h2>
+                </div>
                 <div class="line-through text-red-400 text-sm mb-1">¥1888</div>
                 <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥1314</div>
                 <div class="text-light text-sm mb-3">不推荐，除非你是真的热爱！</div>

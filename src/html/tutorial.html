@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红警新手教学 - AI的复仇</title>
+    <link rel="shortcut icon" href="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" type="image/x-icon">
+    <meta name="description" content="红色警戒2 AI的复仇新手教学指南，包含客户端设置、单位介绍、模式介绍等详细教程。">
+    <meta name="keywords" content="红色警戒2教学, AI的复仇教程, 红警2新手指南, 红警2攻略, 红警2模组教学">
+
+    <!-- 引入Google字体 -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="../js/tailwind.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#CC0000',
+                        secondary: '#FFCC00',
+                        dark: '#0A0A0A',
+                        light: '#F5F5F5',
+                        militaryDark: '#1a1a1a',
+                        militaryMedium: '#333333',
+                        militaryLight: '#666666',
+                        militaryAccent: '#0EA5E9'
+                    },
+                    fontFamily: {
+                        'rajdhani': ['Rajdhani', 'sans-serif'],
+                        'military': ['Rajdhani', 'Arial', 'sans-serif']
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .bg-grid {
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-military bg-grid min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-militaryDark/95 backdrop-blur-md border-b border-primary/30 fixed w-full top-0 z-50 ">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo区域 -->
+                <div class="flex items-center">
+                    <a href="../../index.html" class="flex items-center hover:opacity-80 transition-opacity">
+                        <img src="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+                        <h1 class="text-xl font-bold text-secondary font-rajdhani">AI的复仇</h1>
+                    </a>
+                </div>
+
+                <!-- 面包屑导航 -->
+                <div class="hidden md:flex items-center space-x-2 text-sm text-militaryLight">
+                    <a href="../../index.html" class="hover:text-militaryAccent transition-colors">首页</a>
+                    <i class="fa fa-angle-right text-militaryAccent"></i>
+                    <span class="text-secondary">新手教学</span>
+                </div>
+
+                <!-- 移动端菜单按钮 -->
+                <button id="mobile-menu-toggle"
+                    class="md:hidden p-2 rounded-lg hover:bg-militaryMedium/50 transition-colors">
+                    <i class="fa fa-bars text-white text-xl"></i>
+                </button>
+            </div>
+
+            <!-- 移动端菜单 -->
+            <div id="mobile-menu"
+                class="md:hidden bg-militaryMedium/90 backdrop-blur-md border-t border-militaryLight/20 hidden">
+                <div class="py-4 space-y-2">
+                    <a href="#client-setup"
+                        class="block px-4 py-2 hover:bg-primary/20 transition-colors text-light">客户端设置</a>
+                    <a href="#unit-guide"
+                        class="block px-4 py-2 hover:bg-primary/20 transition-colors text-light">单位介绍</a>
+                    <a href="#game-modes"
+                        class="block px-4 py-2 hover:bg-primary/20 transition-colors text-light">模式介绍</a>
+                    <a href="#map-guide"
+                        class="block px-4 py-2 hover:bg-primary/20 transition-colors text-light">地图介绍</a>
+                    <a href="#battle-simulation"
+                        class="block px-4 py-2 hover:bg-primary/20 transition-colors text-light">电子斗蛐蛐</a>
+                    <a href="#gameplay-videos"
+                        class="block px-4 py-2 hover:bg-primary/20 transition-colors text-light">游戏试玩视频</a>
+                    <a href="../../index.html"
+                        class="block px-4 py-2 hover:bg-primary/20 transition-colors text-secondary">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 教程导航菜单 -->
+    <div
+        class="fixed top-16 left-0   right-0 bg-militaryMedium/80 backdrop-blur-md border-b border-militaryAccent/30 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto py-3 space-x-6 scrollbar-hide">
+                <a href="#client-setup"
+                    class="whitespace-nowrap px-4 py-2 rounded-lg bg-militaryDark/50 hover:bg-primary/20 transition-all text-light hover:text-secondary border border-militaryLight/20 hover:border-primary/50">
+                    <i class="fa fa-cog mr-2"></i>客户端设置
+                </a>
+                <a href="#unit-guide"
+                    class="whitespace-nowrap px-4 py-2 rounded-lg bg-militaryDark/50 hover:bg-primary/20 transition-all text-light hover:text-secondary border border-militaryLight/20 hover:border-primary/50">
+                    <i class="fa fa-users mr-2"></i>单位介绍
+                </a>
+                <a href="#game-modes"
+                    class="whitespace-nowrap px-4 py-2 rounded-lg bg-militaryDark/50 hover:bg-primary/20 transition-all text-light hover:text-secondary border border-militaryLight/20 hover:border-primary/50">
+                    <i class="fa fa-gamepad mr-2"></i>模式介绍
+                </a>
+                <a href="#map-guide"
+                    class="whitespace-nowrap px-4 py-2 rounded-lg bg-militaryDark/50 hover:bg-primary/20 transition-all text-light hover:text-secondary border border-militaryLight/20 hover:border-primary/50">
+                    <i class="fa fa-map mr-2"></i>地图介绍
+                </a>
+                <a href="#battle-simulation"
+                    class="whitespace-nowrap px-4 py-2 rounded-lg bg-militaryDark/50 hover:bg-primary/20 transition-all text-light hover:text-secondary border border-militaryLight/20 hover:border-primary/50">
+                    <i class="fa fa-bolt mr-2"></i>电子斗蛐蛐
+                </a>
+                <a href="#gameplay-videos"
+                    class="whitespace-nowrap px-4 py-2 rounded-lg bg-militaryDark/50 hover:bg-primary/20 transition-all text-light hover:text-secondary border border-militaryLight/20 hover:border-primary/50">
+                    <i class="fa fa-play-circle mr-2"></i>游戏试玩
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <main class="pt-64 pb-16 ">
+        <!-- 页面标题 -->
+        <div class="container mx-auto px-4 mb-12">
+            <div class="text-center fade-in">
+                <h1
+                    class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    红警新手教学
+                </h1>
+                <p class="text-xl text-militaryLight max-w-3xl mx-auto">
+                    AI的复仇新手教学指南，包含客户端设置、单位介绍、模式介绍等详细教程
+                </p>
+            </div>
+        </div>
+
+        <!-- 客户端设置 -->
+        <section id="client-setup" class="container mx-auto px-4 mb-16 fade-in">
+            <div class="bg-militaryDark/50 backdrop-blur-md rounded-xl border border-militaryAccent/30 p-8 hover-glow">
+                <div class="flex items-center mb-6">
+                    <i class="fa fa-cog text-3xl text-primary mr-4"></i>
+                    <h2 class="text-3xl font-bold text-secondary">客户端设置</h2>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- 更新日志查看 -->
+                    <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                        <h3 class="text-xl font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-refresh mr-2 text-militaryAccent"></i>
+                            更新日志查看
+                        </h3>
+                        <p class="text-light mb-4">点击红色箭头所指处</p>
+                        <div class="mb-4">
+                            <img src="./img/tutorial/update.png" alt="更新按钮位置"
+                                class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                        </div>
+                        <p class="text-light mb-4">单击按钮后进入此页面：<a href="../../index.html"
+                                class="text-militaryAccent hover:text-secondary transition-colors underline"
+                                target="_blank">https://liuwentianhj.cc</a></p>
+                        <div class="mb-4">
+                            <img src="./img/tutorial/更新日志.png" alt="更新日志页面"
+                                class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                        </div>
+                        <p class="text-light mb-4">拉到页面最后有下载地址</p>
+                        <div class="mb-4">
+                            <img src="./img/tutorial/下载地址.png" alt="下载地址"
+                                class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                        </div>
+                    </div>
+
+                    <!-- 自定义地图添加 -->
+                    <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                        <h3 class="text-xl font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-plus mr-2 text-militaryAccent"></i>
+                            如何新增自定义地图
+                        </h3>
+                        <p class="text-light mb-2">1.制作一张后缀名为<span
+                                class="bg-primary/20 px-2 py-1 rounded text-secondary font-mono">.map</span>的图</p>
+                        <p class="text-light mb-4">2.拖进红色箭头所在的目录即可</p>
+                        <div class="mb-4">
+                            <img src="./img/tutorial/新增地图.png" alt="新增地图"
+                                class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                        </div>
+                    </div>
+
+                    <!-- 客户端设置详细 -->
+                    <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                        <h3 class="text-xl font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-cogs mr-2 text-militaryAccent"></i>
+                            客户端设置详细
+                        </h3>
+                        <div class="space-y-4">
+                            <p class="text-light">1.主界面点击设置按钮</p>
+                            <div class="mb-4">
+                                <img src="./img/tutorial/设置.png" alt="设置按钮"
+                                    class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                            </div>
+                            <p class="text-light">2.进入设置界面</p>
+                            <div class="mb-4">
+                                <img src="./img/tutorial/分辨率.png" alt="分辨率设置"
+                                    class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-primary/10 border border-primary/30 rounded-lg p-4">
+                                    <p class="text-light font-semibold">3.游戏分辨率设置</p>
+                                </div>
+                                <div class="bg-secondary/10 border border-secondary/30 rounded-lg p-4">
+                                    <p class="text-light font-semibold">4.窗口化设置</p>
+                                </div>
+                            </div>
+                            <div class="bg-militaryAccent/10 border border-militaryAccent/30 rounded-lg p-4">
+                                <p class="text-light font-semibold">5.EVA指挥官语音包切换</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 游戏闪频解决方案 -->
+                    <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                        <h3 class="text-xl font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-warning mr-2 text-primary"></i>
+                            游戏闪频怎么办？
+                        </h3>
+                        <div class="space-y-3">
+                            <p class="text-light">1.桌面显示调100%</p>
+                            <p class="text-light">2.显示器分辨率不高于1920*1080</p>
+                            <div class="mb-4">
+                                <img src="./img/tutorial/闪频.png" alt="闪频解决"
+                                    class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                            </div>
+                            <p class="text-light">3.如果以上两点都满足，还是闪频，请尝试在设置界面开启窗口化模式</p>
+                            <p class="text-light">4.如果以上都不行重做系统或者换电脑</p>
+                        </div>
+                    </div>
+
+                    <!-- 玩家名称设置 -->
+                    <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                        <h3 class="text-xl font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-user mr-2 text-militaryAccent"></i>
+                            玩家名称
+                        </h3>
+                        <div class="space-y-3">
+                            <p class="text-light">1.进入设置界面后，点击上方Tab栏切换到游戏界面</p>
+                            <div class="mb-4">
+                                <img src="./img/tutorial/玩家名称.png" alt="玩家名称设置"
+                                    class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                            </div>
+                            <p class="text-light">2.输入自己的玩家名称。</p>
+                            <p class="text-light">3.点击保存。</p>
+                            <p class="text-light">4.重启客户端或者</p>
+                            <p class="text-light">5.切换到主界面，上滑鼠标至顶端后，点击登出游戏再登入。</p>
+                            <div class="mb-4">
+                                <img src="./img/tutorial/登出.png" alt="登出游戏"
+                                    class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 模式选择 -->
+                    <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                        <h3 class="text-xl font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-list mr-2 text-militaryAccent"></i>
+                            模式选择
+                        </h3>
+                        <p class="text-light mb-4">1.点击红色箭头所指下拉菜单进行选择切换</p>
+                        <div class="mb-4">
+                            <img src="./img/tutorial/模式.png" alt="模式选择"
+                                class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                        </div>
+                    </div>
+
+                    <!-- 组件设置 -->
+                    <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                        <h3 class="text-xl font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-puzzle-piece mr-2 text-militaryAccent"></i>
+                            组件设置
+                        </h3>
+                        <div class="space-y-4">
+                            <p class="text-light">1.单击复选框开启模式增强</p>
+                            <div class="mb-4">
+                                <img src="./img/tutorial/组件.png" alt="组件设置"
+                                    class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                            </div>
+                            <p class="text-light">2.点击下拉菜单进行资金等其他游戏设置</p>
+                            <div class="mb-4">
+                                <img src="./img/tutorial/资金设置.png" alt="资金设置"
+                                    class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                            </div>
+                            <div class="bg-secondary/10 border border-secondary/30 rounded-lg p-4">
+                                <p class="text-light">
+                                    <a href="https://v.douyin.com/jD0xuVR2WGk/"
+                                        class="text-militaryAccent hover:text-secondary transition-colors underline"
+                                        target="_blank">3.单兵服务怎么玩？(点击看视频教程)</a>
+                                </p>
+                                <div class="mt-4">
+                                    <img src="./img/tutorial/单兵服务.png" alt="单兵服务"
+                                        class="max-w-full h-auto rounded-lg border border-militaryAccent/20">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 单位介绍 -->
+        <section id="unit-guide" class="container mx-auto px-4 mb-16 fade-in">
+            <div class="bg-militaryDark/50 backdrop-blur-md rounded-xl border border-militaryAccent/30 p-8 hover-glow">
+                <div class="flex items-center mb-6">
+                    <i class="fa fa-users text-3xl text-primary mr-4"></i>
+                    <h2 class="text-3xl font-bold text-secondary">单位介绍</h2>
+                </div>
+                <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                    <div class="text-center">
+                        <i class="fa fa-info-circle text-militaryAccent text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-secondary mb-4">单位详情将通过JavaScript动态加载</h3>
+                        <p class="text-light">包含各阵营单位介绍、属性对比、使用技巧等详细信息</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模式介绍 -->
+        <section id="game-modes" class="container mx-auto px-4 mb-16 fade-in">
+            <div class="bg-militaryDark/50 backdrop-blur-md rounded-xl border border-militaryAccent/30 p-8 hover-glow">
+                <div class="flex items-center mb-6">
+                    <i class="fa fa-gamepad text-3xl text-primary mr-4"></i>
+                    <h2 class="text-3xl font-bold text-secondary">模式介绍</h2>
+                </div>
+                <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                    <div class="text-center game-modes">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 地图介绍 -->
+        <section id="map-guide" class="container mx-auto px-4 mb-16 fade-in">
+            <div class="bg-militaryDark/50 backdrop-blur-md rounded-xl border border-militaryAccent/30 p-8 hover-glow">
+                <div class="flex items-center mb-6">
+                    <i class="fa fa-map text-3xl text-primary mr-4"></i>
+                    <h2 class="text-3xl font-bold text-secondary">地图介绍</h2>
+                </div>
+                <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                    <div class="text-center">
+                        <i class="fa fa-map-marker text-militaryAccent text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-secondary mb-4">地图信息将通过JavaScript动态加载</h3>
+                        <p class="text-light">包含各类地图的详细介绍、策略建议等内容</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 电子斗蛐蛐 -->
+        <section id="battle-simulation" class="container mx-auto px-4 mb-16 fade-in">
+            <div class="bg-militaryDark/50 backdrop-blur-md rounded-xl border border-militaryAccent/30 p-8 hover-glow">
+                <div class="flex items-center mb-6">
+                    <i class="fa fa-bolt text-3xl text-primary mr-4"></i>
+                    <h2 class="text-3xl font-bold text-secondary">电子斗蛐蛐</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-militaryMedium/30 rounded-lg p-4 border border-militaryLight/10">
+                        <h3 class="text-lg font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-play-circle mr-2 text-militaryAccent"></i>
+                            AI对战演示 1
+                        </h3>
+                        <div
+                            class="aspect-video bg-militaryDark/50 rounded-lg overflow-hidden border border-militaryAccent/20">
+                            <iframe src="https://player.bilibili.com/player.html?bvid=BV191421o7wD&autoplay=0&muted=0"
+                                class="w-full h-full" frameborder="0" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="bg-militaryMedium/30 rounded-lg p-4 border border-militaryLight/10">
+                        <h3 class="text-lg font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fa fa-play-circle mr-2 text-militaryAccent"></i>
+                            AI对战演示 2
+                        </h3>
+                        <div
+                            class="aspect-video bg-militaryDark/50 rounded-lg overflow-hidden border border-militaryAccent/20">
+                            <iframe src="https://player.bilibili.com/player.html?bvid=BV1Tp42197gC&autoplay=0&muted=0"
+                                class="w-full h-full" frameborder="0" allowfullscreen loading="lazy"
+                                referrerpolicy="no-referrer">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 游戏试玩视频 -->
+        <section id="gameplay-videos" class="container mx-auto px-4 mb-16 fade-in">
+            <div class="bg-militaryDark/50 backdrop-blur-md rounded-xl border border-militaryAccent/30 p-8 hover-glow">
+                <div class="flex items-center mb-6">
+                    <i class="fa fa-play-circle text-3xl text-primary mr-4"></i>
+                    <h2 class="text-3xl font-bold text-secondary">游戏试玩视频</h2>
+                </div>
+                <div class="bg-militaryMedium/30 rounded-lg p-6 border border-militaryLight/10">
+                    <h3 class="text-lg font-semibold text-secondary mb-4 flex items-center">
+                        <i class="fa fa-video-camera mr-2 text-militaryAccent"></i>
+                        游戏实况演示
+                    </h3>
+                    <div
+                        class="aspect-video bg-militaryDark/50 rounded-lg overflow-hidden border border-militaryAccent/20">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV1yN411v73e&autoplay=0&muted=0"
+                            class="w-full h-full" frameborder="0" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-militaryDark py-12 border-t border-militaryAccent/30">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" alt="AI的复仇Logo"
+                            class="h-10 mr-3 rounded">
+                        <h3 class="text-xl font-bold text-secondary">AI的复仇</h3>
+                    </div>
+                    <p class="text-light mb-4">红色警戒2非官方扩展模组，专注于提供多模式多防守图，让玩家单机就能爽玩各类防守图。</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">快速链接</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="../../index.html#home"
+                            class="text-light hover:text-militaryAccent transition-colors">首页</a>
+                        <a href="../../index.html#features"
+                            class="text-light hover:text-militaryAccent transition-colors">模组特色</a>
+                        <a href="../../index.html#screenshots"
+                            class="text-light hover:text-militaryAccent transition-colors">游戏截图</a>
+                        <a href="../../index.html#download"
+                            class="text-light hover:text-militaryAccent transition-colors">下载中心</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-militaryAccent/30 mt-8 pt-6 text-center text-light text-sm">
+                <p>&copy; 2025 AI的复仇 模组网站 | 红色警戒2相关资源仅作学习交流使用</p>
+                <p class="mt-2">命令与征服，红色警戒2及尤里的复仇版权归Electronic Arts所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/tutorial.js" ></script>
+</body>
+
+</html>
