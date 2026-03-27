@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AI的复仇赞助套餐 - 红色警戒2</title>
+    <title>AI的复仇套餐权限 - 红色警戒2</title>
     <link rel="shortcut icon" href="https://s2.loli.net/2025/07/22/RD3hjUZlMwy5TfA.png" type="image/x-icon">
-    <meta name="description" content="红色警戒2 AI的复仇赞助套餐，支持平台开发，享受专属会员特权。">
+    <meta name="description" content="红色警戒2 AI的复仇套餐权限：会员时长与功能权限分离，规则更清晰。">
     <meta name="keywords" content="红色警戒2, AI的复仇, 红警2赞助, 红警2会员, 红警2扩展包, 红警2下载">
     <link rel="canonical" href="https://liuwentianhj.cc" />
     <script src="../js/tailwind.min.js"></script>
@@ -197,132 +197,140 @@
     <!-- 页面标题区 -->
     <section class="pt-24 pb-12 bg-militaryDark relative">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-3xl md:text-5xl font-bold text-secondary mb-4">AI的复仇赞助套餐</h1>
-            <p class="text-light max-w-2xl mx-auto">支持平台开发，享受专属会员特权，助力红警2 AI的复仇持续更新！</p>
+            <h1 class="text-3xl md:text-5xl font-bold text-secondary mb-4">AI的复仇 · 套餐权限</h1>
+            <p class="text-light max-w-2xl mx-auto">会员档位决定时长（互斥）并包含基础会员功能；主播/地图/兵种定制属于扩展权限，需单独开通。</p>
         </div>
     </section>
 
     <!-- 套餐卡片区 -->
     <section class="py-16 bg-militaryDark">
         <div class="container mx-auto px-4 flex flex-wrap gap-8 justify-center">
-            <!-- 试玩卡 -->
+            <!-- 普通用户 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
                 <div class="package-title">
                     <div class="package-title-icon trial-title-icon">
                         <i class="fa fa-play"></i>
                     </div>
-                    <h2 class="text-xl font-bold text-militaryAccent">试玩卡</h2>
+                    <h2 class="text-xl font-bold text-militaryAccent">普通用户</h2>
                 </div>
-                <div class="text-yellow-400 text-lg font-bold mb-1">¥4.9</div>
-                <div class="text-light text-sm mb-3">1天</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">¥0</div>
+                <div class="text-light text-sm mb-3">注册即永久</div>
                 <ul class="mb-4 text-light text-sm space-y-1">
-                    <li>适合不经常玩的人</li>
-                    <li>新版一日游</li>
-                    <li>这年头请人办事难啊，当作一瓶水钱啦</li>
-                    <li>去网吧玩一天可不止这个价</li>
+                    <li>可长期游玩基础内容</li>
+                    <li>地图与高级功能受限</li>
+                    <li>无命令行修改 / 无语音 / 无对战模拟</li>
+                    <li>可随时升级为会员或扩展权限</li>
                 </ul>
                 <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
-                    href="#"><i class="fa fa-rocket"></i> 立即体验</a>
+                    href="#"><i class="fa fa-rocket"></i> 免费使用</a>
             </div>
-            <!-- 月卡 -->
+            <!-- 月会员 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
                 <div class="package-title">
                     <div class="package-title-icon monthly-title-icon">
                         <i class="fa fa-calendar"></i>
                     </div>
-                    <h2 class="text-xl font-bold text-militaryAccent">月卡</h2>
+                    <h2 class="text-xl font-bold text-militaryAccent">月会员</h2>
                 </div>
-                <div class="line-through text-red-400 text-sm mb-1">¥29.9</div>
-                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥23.9</div>
+                <div class="line-through text-red-400 text-sm mb-1">¥39</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">会员价: ¥19.9</div>
                 <div class="text-light text-sm mb-3">30天</div>
                 <ul class="mb-4 text-light text-sm space-y-1">
-                    <li>花小钱享受一样的内容</li>
-                    <li>到期自动移除账号...</li>
+                    <li><strong class="text-yellow-400">会员时长档位（互斥）</strong></li>
+                    <li>包含：命令行修改、语音、对战模拟、全地图、全模式</li>
+                    <li>不包含：主播弹幕/防守图生成/兵种定制等</li>
                 </ul>
                 <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
-                    href="#"><i class="fa fa-star"></i> 立即赞助</a>
+                    data-plan-code="monthly"
+                    href="#"><i class="fa fa-star"></i> 立即开通</a>
             </div>
-            <!-- 半年卡 -->
+            <!-- 年度会员 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
                 <div class="package-title">
                     <div class="package-title-icon halfyear-title-icon">
                         <i class="fa fa-sun-o"></i>
                     </div>
-                    <h2 class="text-xl font-bold text-militaryAccent">半年卡</h2>
+                    <h2 class="text-xl font-bold text-militaryAccent">年度会员</h2>
                 </div>
-                <div class="line-through text-red-400 text-sm mb-1">¥69.9</div>
-                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥59.9</div>
-                <div class="text-light text-sm mb-3">180天</div>
+                <div class="line-through text-red-400 text-sm mb-1">¥129</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">会员价: ¥89.9</div>
+                <div class="text-light text-sm mb-3">365天</div>
                 <ul class="mb-4 text-light text-sm space-y-1">
-                    <li>玩的越勤快，体验的越多</li>
-                    <li>时光荏苒如白驹过隙</li>
-                    <li>人生如戏，没必要太苦需忙里偷闲</li>
+                    <li><strong class="text-yellow-400">会员时长档位（互斥）</strong></li>
+                    <li>包含：命令行修改、语音、对战模拟、全地图、全模式</li>
+                    <li>不包含：主播弹幕/防守图生成/兵种定制等</li>
                 </ul>
                 <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
-                    href="#"><i class="fa fa-gift"></i> 立即赞助</a>
+                    data-plan-code="yearly"
+                    href="#"><i class="fa fa-gift"></i> 立即开通</a>
             </div>
-            <!-- 一年卡 -->
+            <!-- 终身会员 -->
             <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
                 style="background-color:#283040;">
                 <div class="package-title">
                     <div class="package-title-icon yearly-title-icon">
                         <i class="fa fa-shield"></i>
                     </div>
-                    <h2 class="text-xl font-bold text-militaryAccent">一年卡</h2>
+                    <h2 class="text-xl font-bold text-militaryAccent">终身会员</h2>
                 </div>
-                <div class="line-through text-red-400 text-sm mb-1">¥119.9</div>
-                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥99.9</div>
-                <div class="text-light text-sm mb-3">365天</div>
+                <div class="line-through text-red-400 text-sm mb-1">¥1888</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">会员价: ¥498</div>
+                <div class="text-light text-sm mb-3">一次购买，长期使用当前会员基础功能</div>
                 <ul class="mb-4 text-light text-sm space-y-1">
-                    <li>您是这个版本的忠实粉丝了</li>
-                    <li>期间部分更新也能享受得到了</li>
-                    <li>最稳妥的选择</li>
+                    <li><strong class="text-yellow-400">会员时长档位（互斥）</strong></li>
+                    <li><strong class="text-yellow-400">长期使用已购会员基础功能（命令行修改、语音、对战模拟、全地图、全模式）</strong></li>
+                    <li>在本产品生命周期内，已购会员基础功能提供持续维护与常规更新</li>
+                    <li>未来新增独立功能、扩展权限或新服务不默认包含，具体以发布说明为准</li>
                 </ul>
                 <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
-                    href="#"><i class="fa fa-diamond"></i> 立即赞助</a>
+                    data-plan-code="lifetime"
+                    href="#"><i class="fa fa-diamond"></i> 立即开通</a>
             </div>
-            <!-- 三年卡 -->
-            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+            <!-- 扩展权限（组合布局） -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-2xl p-6 flex flex-col"
                 style="background-color:#283040;">
                 <div class="package-title">
                     <div class="package-title-icon threeyear-title-icon">
                         <i class="fa fa-trophy"></i>
                     </div>
-                    <h2 class="text-xl font-bold text-militaryAccent">三年卡</h2>
+                    <h2 class="text-xl font-bold text-militaryAccent">扩展权限（可叠加，不包含在会员内）</h2>
                 </div>
-                <div class="line-through text-red-400 text-sm mb-1">¥299.9</div>
-                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥199.9</div>
-                <div class="text-light text-sm mb-3">1095天</div>
+                <div class="line-through text-red-400 text-sm mb-1">权限独立购买</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">可与任意会员时长叠加</div>
+                <div class="text-light text-sm mb-3">不受会员档位互斥影响</div>
                 <ul class="mb-4 text-light text-sm space-y-1">
-                    <li>这个版本的发展已经离不开您了</li>
-                    <li>可免费享受期间多数的更新</li>
-                    <li>比较划算的选择</li>
+                    <li><strong class="text-yellow-400">① 主播权限：¥200/月</strong></li>
+                    <li>直播弹幕控制红警、适配抖音、游戏更新优化、直播专用稳定维护</li>
+                    <li><strong class="text-yellow-400">② 防守图生成权限：【每日30次】</strong></li>
+                    <li>地图编辑器全功能、可自主生成地图、持续更新模板与算法</li>
+                    <li><strong class="text-yellow-400">以上两项均不包含在任何会员里</strong></li>
                 </ul>
                 <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
-                    href="#"><i class="fa fa-trophy"></i> 立即赞助</a>
+                    href="#"><i class="fa fa-trophy"></i> 立即咨询</a>
             </div>
-            <!-- 终身卡 -->
-            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xs p-6 flex flex-col"
+                  
+            <!-- 兵种定制（独立布局） -->
+            <div class="card-hover rounded-xl border border-militaryAccent/30 shadow-lg w-full max-w-xl p-6 flex flex-col"
                 style="background-color:#283040;">
                 <div class="package-title">
                     <div class="package-title-icon lifetime-title-icon">
                         <i class="fa fa-diamond"></i>
                     </div>
-                    <h2 class="text-xl font-bold text-militaryAccent">终身卡</h2>
+                    <h2 class="text-xl font-bold text-militaryAccent">兵种定制扩展</h2>
                 </div>
-                <div class="line-through text-red-400 text-sm mb-1">¥1888</div>
-                <div class="text-yellow-400 text-lg font-bold mb-1">优惠价: ¥1314</div>
-                <div class="text-light text-sm mb-3">不推荐，除非你是真的热爱！</div>
+                <div class="line-through text-red-400 text-sm mb-1">独立服务 · 按需求报价</div>
+                <div class="text-yellow-400 text-lg font-bold mb-1">单独沟通</div>
+                <div class="text-light text-sm mb-3">功能扩展类（可叠加）</div>
                 <ul class="mb-4 text-light text-sm space-y-1">
-                    <li>感谢您的赞助</li>
-                    <li>咱的服务器又能延续一年了</li>
-                    <li>更新的内容想必也少不了</li>
+                    <li>专属定制兵种</li>
+                    <li>账号独立授权</li>
+                    <li>不影响他人平衡</li>
                 </ul>
                 <a class="buy-btn bg-militaryAccent text-white font-bold py-2 px-4 rounded text-center mt-auto"
-                    href="#"><i class="fa fa-heart"></i> 立即赞助</a>
+                    href="#"><i class="fa fa-heart"></i> 立即咨询</a>
 
             </div>
         </div>
@@ -393,28 +401,107 @@
         </div>
     </footer>
     <script>
-        // 统一绑定所有套餐卡片的立即赞助按钮
         document.addEventListener('DOMContentLoaded', function () {
+            var API_BASE = 'https://api.liuwentianhj.cc';
             var modal = document.getElementById('sponsorModal');
             var closeBtn = document.getElementById('closeSponsorModal');
             var buyBtns = document.querySelectorAll('.buy-btn');
+
+            function showSponsorModal() {
+                modal.style.display = 'block';
+            }
+            function hideSponsorModal() {
+                modal.style.display = 'none';
+            }
+            function getToken() {
+                return localStorage.getItem('token') || sessionStorage.getItem('token') || '';
+            }
+            function authHeaders() {
+                var token = getToken();
+                var h = { 'Content-Type': 'application/json' };
+                if (token) h.Authorization = 'Bearer ' + token;
+                return h;
+            }
+
+            async function ensureMockEnabled() {
+                var res = await fetch(API_BASE + '/api/pay/config', {
+                    method: 'GET',
+                    headers: authHeaders(),
+                });
+                var body = {};
+                try { body = await res.json(); } catch (_e) {}
+                if (!res.ok) {
+                    throw new Error(body.error || body.message || ('配置检查失败(' + res.status + ')'));
+                }
+                if (!body.mockEnabled) {
+                    throw new Error('当前未开启联调支付（MOCK_PAYMENT_ENABLED）。');
+                }
+                return body;
+            }
+
+            async function createMockOrder(planCode) {
+                var res = await fetch(API_BASE + '/api/pay/mock/create', {
+                    method: 'POST',
+                    headers: authHeaders(),
+                    body: JSON.stringify({ planCode: planCode }),
+                });
+                var body = {};
+                try { body = await res.json(); } catch (_e) {}
+                if (!res.ok || !body.success) {
+                    throw new Error(body.error || body.message || ('下单失败(' + res.status + ')'));
+                }
+                return body;
+            }
+
             buyBtns.forEach(function (btn) {
-                btn.addEventListener('click', function (e) {
+                btn.addEventListener('click', async function (e) {
                     e.preventDefault();
-                    // 只对“立即赞助”按钮弹窗，试玩卡“立即体验”不弹窗
-                    if (btn.innerText.includes('赞助')) {
-                        modal.style.display = 'block';
+
+                    var planCode = btn.getAttribute('data-plan-code');
+                    var text = (btn.innerText || '').trim();
+                    var isConsult = text.includes('咨询') || text.includes('赞助');
+                    var isMockPayButton = !!planCode && text.includes('开通');
+
+                    // 咨询类保持原逻辑：弹二维码
+                    if (isConsult) {
+                        showSponsorModal();
+                        return;
+                    }
+
+                    // 免费使用不拦截
+                    if (text.includes('免费')) {
+                        return;
+                    }
+
+                    if (!isMockPayButton) {
+                        showSponsorModal();
+                        return;
+                    }
+
+                    if (!getToken()) {
+                        alert('请先在客户端登录后再开通（当前未检测到登录 token）。');
+                        return;
+                    }
+
+                    var oldText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> 处理中...';
+                    btn.style.pointerEvents = 'none';
+                    try {
+                        await ensureMockEnabled();
+                        var r = await createMockOrder(planCode);
+                        alert('联调支付成功：' + (r.vipLevel || planCode) + '\n订单号：' + (r.orderNo || 'N/A'));
+                    } catch (err) {
+                        alert('联调支付失败：' + (err && err.message ? err.message : err));
+                    } finally {
+                        btn.innerHTML = oldText;
+                        btn.style.pointerEvents = '';
                     }
                 });
             });
-            closeBtn.addEventListener('click', function () {
-                modal.style.display = 'none';
-            });
-            // 点击遮罩关闭弹窗
+
+            closeBtn.addEventListener('click', hideSponsorModal);
             modal.addEventListener('click', function (e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
+                if (e.target === modal) hideSponsorModal();
             });
         });
     </script>
