@@ -76,6 +76,28 @@
                 font-weight: bold;
                 cursor: pointer;
             }
+            .guide-actions {
+                display: flex;
+                gap: 10px;
+                margin-top: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .guide-btn {
+                padding: 8px 16px;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .guide-btn-primary {
+                background: #0EA5E9;
+                color: #fff;
+            }
+            .guide-btn-secondary {
+                background: #3b4252;
+                color: #dbeafe;
+            }
             
             /* 自定义套餐图标 */
             .package-title {
@@ -155,6 +177,48 @@
 </script>
 
 <body class="bg-militaryDark text-white font-military bg-grid">
+    <style>
+        html,
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            display: none;
+        }
+        .pay-toast {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 10000;
+            min-width: 240px;
+            max-width: 360px;
+            background: #1f2937;
+            color: #e5e7eb;
+            border: 1px solid rgba(14, 165, 233, 0.45);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+        .pay-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .pay-toast.success {
+            border-color: rgba(16, 185, 129, 0.55);
+        }
+        .pay-toast.error {
+            border-color: rgba(239, 68, 68, 0.55);
+        }
+    </style>
     <!-- 导航栏 -->
     <nav class="fixed w-full z-50 bg-[#212429] border-b border-militaryAccent/30">
         <div class="container mx-auto px-4 py-3">
@@ -343,6 +407,21 @@
             </div>
         </div>
 
+        <div id="loginGuideModal" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-title">请先登录客户端账号</div>
+                <div class="text-light text-sm text-center leading-7">
+                    当前未检测到登录凭证，暂时无法直接开通。<br>
+                    请先在客户端完成登录，再回到此页面开通。
+                </div>
+                <div class="guide-actions">
+                    <button id="goDownloadBtn" class="guide-btn guide-btn-primary">去下载/打开客户端</button>
+                    <button id="closeLoginGuideBtn" class="guide-btn guide-btn-secondary">我知道了</button>
+                </div>
+            </div>
+        </div>
+        <div id="payToast" class="pay-toast"></div>
+
     </section>
 
     <!-- 页脚 -->
@@ -402,16 +481,40 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var API_BASE = 'https://api.liuwentianhj.cc';
+            var PAY_API_BASE = 'https://api.liuwentianhj.cc';
             var modal = document.getElementById('sponsorModal');
             var closeBtn = document.getElementById('closeSponsorModal');
+            var loginGuideModal = document.getElementById('loginGuideModal');
+            var closeLoginGuideBtn = document.getElementById('closeLoginGuideBtn');
+            var goDownloadBtn = document.getElementById('goDownloadBtn');
+            var payToast = document.getElementById('payToast');
             var buyBtns = document.querySelectorAll('.buy-btn');
+            var toastTimer = null;
 
             function showSponsorModal() {
                 modal.style.display = 'block';
             }
             function hideSponsorModal() {
                 modal.style.display = 'none';
+            }
+            function showLoginGuideModal() {
+                loginGuideModal.style.display = 'block';
+            }
+            function hideLoginGuideModal() {
+                loginGuideModal.style.display = 'none';
+            }
+            function showPayToast(msg, type) {
+                if (toastTimer) {
+                    clearTimeout(toastTimer);
+                    toastTimer = null;
+                }
+                payToast.classList.remove('success', 'error', 'show');
+                payToast.textContent = msg;
+                payToast.classList.add(type === 'success' ? 'success' : 'error');
+                payToast.classList.add('show');
+                toastTimer = setTimeout(function () {
+                    payToast.classList.remove('show');
+                }, 3000);
             }
             function getToken() {
                 return localStorage.getItem('token') || sessionStorage.getItem('token') || '';
@@ -424,7 +527,7 @@
             }
 
             async function ensureMockEnabled() {
-                var res = await fetch(API_BASE + '/api/pay/config', {
+                var res = await fetch(PAY_API_BASE + '/api/pay/config', {
                     method: 'GET',
                     headers: authHeaders(),
                 });
@@ -440,7 +543,7 @@
             }
 
             async function createMockOrder(planCode) {
-                var res = await fetch(API_BASE + '/api/pay/mock/create', {
+                var res = await fetch(PAY_API_BASE + '/api/pay/mock/create', {
                     method: 'POST',
                     headers: authHeaders(),
                     body: JSON.stringify({ planCode: planCode }),
@@ -479,7 +582,7 @@
                     }
 
                     if (!getToken()) {
-                        alert('请先在客户端登录后再开通（当前未检测到登录 token）。');
+                        showLoginGuideModal();
                         return;
                     }
 
@@ -489,9 +592,9 @@
                     try {
                         await ensureMockEnabled();
                         var r = await createMockOrder(planCode);
-                        alert('联调支付成功：' + (r.vipLevel || planCode) + '\n订单号：' + (r.orderNo || 'N/A'));
+                        showPayToast('联调支付成功：' + (r.vipLevel || planCode) + '，订单号：' + (r.orderNo || 'N/A'), 'success');
                     } catch (err) {
-                        alert('联调支付失败：' + (err && err.message ? err.message : err));
+                        showPayToast('联调支付失败：' + (err && err.message ? err.message : err), 'error');
                     } finally {
                         btn.innerHTML = oldText;
                         btn.style.pointerEvents = '';
@@ -502,6 +605,13 @@
             closeBtn.addEventListener('click', hideSponsorModal);
             modal.addEventListener('click', function (e) {
                 if (e.target === modal) hideSponsorModal();
+            });
+            closeLoginGuideBtn.addEventListener('click', hideLoginGuideModal);
+            goDownloadBtn.addEventListener('click', function () {
+                window.location.href = '../../index.html#download';
+            });
+            loginGuideModal.addEventListener('click', function (e) {
+                if (e.target === loginGuideModal) hideLoginGuideModal();
             });
         });
     </script>
