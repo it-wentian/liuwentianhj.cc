@@ -538,7 +538,7 @@
                         <!-- 视频封面图片 -->
                         <img src="https://s2.loli.net/2025/07/22/gqGP4nMH6tQLFhf.png" alt="游戏宣传片封面"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            onload="document.getElementById('trailerLoader').style.display = 'none'"
+                            onload="(function(el){ if(el) el.style.display = 'none'; })(document.getElementById('trailerLoader'))"
                             onerror="this.onerror=null; this.src='https://picsum.photos/id/1033/1280/720';">
 
                         <!-- 图片加载失败时的备选提示 -->
